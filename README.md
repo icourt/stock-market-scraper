@@ -12,7 +12,7 @@ npm install stock-market-scraper
 ```js
 const scrape = require('stock-market-scraper');
 
-scrape('TICKR')
+scrape('TICKR', [afterMarket]) // After market price is a boolean. Default: true
 .then(info => console.log(info));
 
 // Result:
@@ -38,8 +38,9 @@ scrape('TICKR')
 
 ```js
 const scrape = require('stock-market-scraper');
+
 (async() => {
-    const get = await scrape('TICKR')
+    const get = await scrape('TICKR', [afterMarket]); // After market price is a boolean. Default: true
     console.log(get);
 })();
 
